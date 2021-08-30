@@ -29,6 +29,13 @@ public class User {
         return FAKE_USERS_RANDOM.get(new Random().nextInt(FAKE_USERS_RANDOM.size()));
     }
 
+    /**
+     * Indicates whether some other object is “equal to” this one.
+     * The equals method implements an equivalence relation on non-null object references:
+     * It is reflexive: for any non-null reference value x, x.equals (x) should return true.
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(@Nullable Object obj) {
         if (obj == null) return false;
@@ -37,6 +44,11 @@ public class User {
         return (((User) obj).avatarUrl == this.avatarUrl && ((User) obj).login == this.login);
     }
 
+    /**
+     * public int hashCode () Returns a hash code value for the object.
+     * This method is supported for the benefit of hash tables such as those provided by HashMap.
+     * @return
+     */
     @Override
     public int hashCode() {
         return Objects.hash(login, avatarUrl);
